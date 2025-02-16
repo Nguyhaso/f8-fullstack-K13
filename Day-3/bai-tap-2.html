@@ -8,7 +8,7 @@
     <title>Nguyễn Hải Sơn - Bài tập về nhà Day-3</title>
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="POST">
 
         <table border="0" style="max-width: 600px" cellpadding="3">
             <tr>
@@ -42,20 +42,17 @@
             <tr>
                 <td><label>Please specify<br> your role:</label></td>
                 <td>
-                    <input type="radio" name="role" value="Admin">
-                    <label>Admin</label><br>
-                    <input type="radio" name="role" value="Supervisor">
-                    <label>Supervisor</label><br>
-                    <input type="radio" name="role" value="Manager">
-                    <label>Manager</label>
+                    <label><input type="radio" name="role" value="Admin">Admin</label><br>
+                    <label><input type="radio" name="role" value="Supervisor">Supervisor</label><br>
+                    <label><input type="radio" name="role" value="Manager">Manager</label>
                 </td>
             </tr>
             <tr>
                 <td><label>Single Sign-on<br> the following</label></td>
                 <td>
-                    <input name="mail" type="checkbox">mail<br>
-                    <input name="payroll" type="checkbox">payroll<br>
-                    <input name="self-service" type="checkbox">self-service<br>
+                    <label><input name="flw[]" type="checkbox" value="mail">mail</label><br>
+                    <label><input name="flw[]" type="checkbox" value="payroll">payroll</label><br>
+                    <label><input name="flw[]" value="self-service" type="checkbox">self-service</label><br>
                 </td>
             </tr>
             <tr>
