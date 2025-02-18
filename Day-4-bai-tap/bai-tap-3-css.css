@@ -1,0 +1,38 @@
+h1{
+    color: blue;
+    text-align: center;
+    border: 2px solid;
+    padding: 1px;
+}
+
+div p.nhom-a{
+    color:red;
+}
+
+p::after{
+    content:"💓"
+}
+
+p.nhom-b:hover{
+    color:blue;
+}
+
+.nhom-a:hover::after{
+    content: " out-of-stock";
+}
+
+#elu:hover::before{
+    content: "out-of-stock ";
+    color:green;
+}
+
+div > p{
+    font-family: Ebrima;
+}
+
+li::marker{
+    content: "✨";
+}
+ul li:nth-child(3)::after{
+    content: "hot🚀 nhanh con chap het";
+}

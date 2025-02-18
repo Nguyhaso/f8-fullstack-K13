@@ -1,0 +1,30 @@
+body {
+    background-color: #354556;
+    font-family: monospace;
+}
+
+p, h1 {
+    color: white;
+}
+
+.highlight {
+    color: #f5a008;
+}
+
+input {
+    padding: 5px;
+}
+
+input[type="email"]:hover {
+    background-color: #dddddd;
+}
+
+
+input[type="email"]:hover::placeholder {
+    color: #f5a008;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5a008;
+    color: white;
+}
