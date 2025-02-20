@@ -1,0 +1,26 @@
+
+label {
+    display: block;
+    background-color: #d95a27;
+    color: white;
+    text-align: left;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+}
+
+label:before{
+    content: "✚";
+}
+
+#toggle1:checked ~ .dropdown1:before, #toggle3:checked ~ .dropdown3:before, #toggle2:checked ~ .dropdown2:before   {
+    content: "➖";
+}
+
+
+.dropdown-content1, .dropdown-content2, .dropdown-content3 {
+    display: none;
+}
+
+#toggle1:checked ~ .dropdown-content1, #toggle2:checked ~ .dropdown-content2, #toggle3:checked ~ .dropdown-content3  {
+    display: block;
+}

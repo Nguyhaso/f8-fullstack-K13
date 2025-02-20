@@ -1,0 +1,36 @@
+body{
+    font-family: "Times New Roman";
+}
+h1, p{
+    text-align: center;
+}
+.small-text{
+    font-size: 10px;
+}
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f0a93d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 50%;
+}
+.border-main{
+    display: inline-block;
+    width: 30%;
+    max-width: 200px;
+    min-width: 100px;
+    align: center;
+    box-shadow: 2px 2px 4px #dcdcd2;
+    margin: 5px;
+    text-align: center;
+}
+
+.button{
+    background-color: #f0a93d;
+    color: white;
+}
