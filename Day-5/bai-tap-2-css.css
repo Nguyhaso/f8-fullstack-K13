@@ -7,15 +7,7 @@ h1, p{
 .small-text{
     font-size: 10px;
 }
-.circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #f0a93d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 img {
     width: 50%;
 }
@@ -28,9 +20,24 @@ img {
     box-shadow: 2px 2px 4px #dcdcd2;
     margin: 5px;
     text-align: center;
+    border-radius: 10px;
+    padding-bottom: 10px;
 }
 
 .button{
     background-color: #f0a93d;
     color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+.button:hover{
+    background-color: #dcdcd2;
+    color: black;
+}
+
+.icon{
+    border: 2px solid #f0a93d;
+    border-radius: 50%;
+    padding: 10px;
+    width: 30px;
 }
