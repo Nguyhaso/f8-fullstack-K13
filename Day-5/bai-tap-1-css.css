@@ -8,8 +8,14 @@ label {
     margin: 10px;
 }
 
+.pl--25{
+    padding-left: 25px;
+}
+
 label:before{
     content: "✚";
+    width: 15px;
+    display: inline-block;
 }
 
 #toggle1:checked ~ .dropdown1:before, #toggle3:checked ~ .dropdown3:before, #toggle2:checked ~ .dropdown2:before   {
