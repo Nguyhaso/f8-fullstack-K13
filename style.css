@@ -4,3 +4,10 @@ li::marker {
 p{
     font-size: larger;
 }
+.d-flex{
+    display: flex;
+    gap: 10px;
+}
+.border{
+    border: 1px solid lightgray;
+}

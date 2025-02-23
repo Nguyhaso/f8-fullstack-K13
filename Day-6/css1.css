@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*general css*/
+.black-bg {
+    background: #000;
+}
+.font-lobster{
+    font-family: 'Lobster', cursive;
+}
+.ml-15 {
+    margin-left: 15px;
+}
+
+.d-none {
+    display: none;
+}
+
+.al-left {
+    margin-left: auto;
+}
+
+.al-cen {
+    align-content: center;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.p-6 {
+    padding: 6px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.d-ib {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.width-400 {
+    width: 400px;
+}
+
+.red-text {
+    color: red;
+}
+
+.gray-color {
+    color: gray;
+}
+
+.white-color {
+    color: white;
+}
+
+
+.gray-bg {
+    background: gray;
+}
+input {
+    border: none;
+    outline: none;
+}
+/*specific css*/
+.input-border {
+    display: flex;
+    align-items: center;
+    border: 2px solid gray;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+}
+.button{
+    padding: 5px 15px 5px 15px;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 2px;
+}
+.z-index1 {
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+}
+.z-index2 {
+    position: absolute;
+    top: 135px;
+    z-index: 1;
+}
+.z-index3 {
+    position: absolute;
+    top: 187px;
+    z-index: 1;
+}
+.z-index4 {
+    position: absolute;
+    top: 240px;
+    z-index: 1;
+}
+.z-index5 {
+    position: absolute;
+    top: 295px;
+    z-index: 1;
+}
+.triangular {
+    border: 10px solid black;
+    border-color: black transparent transparent transparent;
+    margin-left: 35px;
+}
+.phone-number{
+    width: 360px;
+}
+.select1{
+    border: none;
+    outline: none;
+    padding-right: 290px;
+}
+.textarea1{
+    border: none;
+    outline: none;
+    min-width: 350px;
+    min-height: 200px;
+
+}
+/*css when focus*/
+.input-border:focus-within {
+    border: 3px solid black;
+}
+
+.input-border:focus-within .hover-la {
+    background: black;
+}
+
+.input-border:focus-within .hover-p {
+    color: black;
+}
+
+#nameinput:focus-within ~ #toggle1 {
+    display: block;
+}
+#emailinput:focus-within ~ #toggle2 {
+    display: block;
+}
+#phoneinput:focus-within ~ #toggle3 {
+    display: block;
+}
+#subjectinput:focus-within ~ #toggle4 {
+    display: block;
+}
+#messageinput:focus-within ~ #toggle5 {
+    display: block;
+}
+/*css when hover*/
+.input-border:hover {
+    border: 3px solid black;
+}
+
+.input-border:hover .hover-la {
+    background: black;
+}

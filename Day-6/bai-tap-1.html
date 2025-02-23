@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Hải Sơn - Day-6 bài 1</title>
+    <link rel="stylesheet" href="css1.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+</head>
+<body>
+    <h1 class="font-lobster">Hey there</h1>
+    <div class="width-400">
+        <span class="red-text">We'd like to hear from you.</span>
+        <span class="gray-text">Send us your message or just say hi with our contact form or directly via phone, we love to chat</span>
+    </div>
+<!--Name input-->
+    <div class="gray-color input-border al-cen width-400" id="nameinput">
+        <label for="name" class="mdi mdi-account gray-bg d-ib p-6 white-color hover-la"></label>
+        <input id="name" type="text" name="name" placeholder="Your name">
+        <p class="al-left mr-10 hover-p">*</p>
+    </div>
+<!--your name triangular-->
+    <div class="d-none z-index1" id="toggle1">
+        <p class="black-bg white-color d-ib ml-15 p-6">Enter your name</p><br>
+        <span class="triangular d-ib"></span>
+    </div>
+<!--    Email input-->
+    <div class="gray-color input-border al-cen width-400" id="emailinput">
+        <label for="email" class="mdi mdi-email gray-bg d-ib p-6 white-color hover-la"></label>
+        <input id="email" type="email" name="email" placeholder="your@email.com">
+        <p class="al-left mr-10 hover-p">*</p>
+    </div>
+<!--email triangular-->
+    <div class="d-none z-index2" id="toggle2">
+        <p class="black-bg white-color d-ib ml-15 p-6">Enter your email</p><br>
+        <span class="triangular d-ib"></span>
+    </div>
+<!--    Phone input-->
+    <div class="gray-color input-border al-cen width-400" id="phoneinput">
+        <label for="phone" class="mdi mdi-phone gray-bg d-ib p-6 white-color hover-la"></label>
+        <input id="phone" class="phone-number" type="number" name="phone" placeholder="+84 12345678">
+    </div>
+<!--phone triangular-->
+    <div class="d-none z-index3" id="toggle3">
+        <p class="black-bg white-color d-ib ml-15 p-6">Enter your phone</p><br>
+        <span class="triangular d-ib"></span>
+    </div>
+<!--Subject input-->
+    <div class="gray-color input-border al-cen width-400" id="subjectinput">
+        <label for="subject" class="mdi mdi-notebook gray-bg d-ib p-6 white-color hover-la"></label>
+        <select id="subject" class="select1"  name="subject">
+            <option value="null">Subject</option>
+            <option value="subject1">Subject1</option>
+            <option value="subject2">Subject2</option>
+        </select>
+    </div>
+<!--subject triangular-->
+    <div class="d-none z-index4" id="toggle4">
+        <p class="black-bg white-color d-ib ml-15 p-6">Choose your subject</p><br>
+        <span class="triangular d-ib"></span>
+    </div>
+<!--Message input-->
+    <div class="gray-color input-border al-cen width-400" id="messageinput">
+        <label for="message" class="mdi mdi-message gray-bg d-ib p-6 white-color hover-la"></label>
+        <textarea id="message" class="textarea1" name="message" placeholder="Message"></textarea>
+        <p class="al-left mr-10 hover-p">*</p>
+    </div>
+<!--message triangular-->
+    <div class="d-none z-index5" id="toggle5">
+        <p class="black-bg white-color d-ib ml-15 p-6">Send your word here!</p><br>
+        <span class="triangular d-ib"></span>
+    </div>
+    <footer class="footer" >
+        <span>
+            <input type="checkbox" name="sendcopy" id="sendcopy">
+            <label for="sendcopy">Send me a copy of this message</label>
+        </span>
+        <button class="button" type="submit">Send</button>
+    </footer>
+</body>
+</html>

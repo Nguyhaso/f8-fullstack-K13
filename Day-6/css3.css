@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*generic css*/
+.d-flex{
+    display: flex;
+}
+.width--100{
+    width:100px;
+}
+/*specific css*/
+.menu{
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: fit-content;
+    background-image: linear-gradient(to right, #c075e6 0%, rgba(61, 76, 241, 0.51) 100%);
+    border-radius: 10px;
+}
+.menu-content{
+    gap: 10px;
+    padding: 0px;
+    list-style: none;
+}
+
+.logo{
+    align-items: center;
+    gap: 10px;
+}
+.button, .category{
+    text-decoration: none;
+    background-image: linear-gradient(to right, #3d58ec 0%, #ae63e5 100%);
+    padding: 5px 5px;
+    border-radius: 10px;
+    color: white;
+}
