@@ -20,6 +20,8 @@
     border: 1px red solid;
     border-radius: 15px;
     margin: 15px;
+    max-width: 1000px;
+    justify-self: center;
 }
 .sub-container{
     flex-wrap: wrap;
