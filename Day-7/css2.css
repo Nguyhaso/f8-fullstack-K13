@@ -17,10 +17,12 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 .container>.item{
     background-color: white;
+    border: 1px solid black;
     border-radius: 10px;
     width: calc(20% - 8px);
     min-width: 220px;
@@ -30,9 +32,10 @@ body {
     padding: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     text-decoration: none;
+    position: relative;
 }
 .container>.item:hover{
-    transform: scale(101%);
+    /*transform: scale(101%);*/
     /*transform: skew(1deg);*/
     /*background-color: lightpink;*/
     box-shadow: 10px 10px 10px rgba(251, 155, 221, 0.83);
@@ -88,3 +91,21 @@ body {
     color: gray;
 }
 /**/
+.price-percent{
+    color: white;
+    /*background-color: darkred;*/
+    display: inline-block;
+    padding: 5px;
+    position: absolute;
+    top: -6px;
+    left: -10px;
+}
+.price-percent>.photo-discount{
+    width: 100px;
+    position: relative;
+}
+.price-percent p{
+    position: relative;
+    top: -35px;
+    left: 20px;
+}
