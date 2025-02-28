@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css1.css">
+
+    <link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+</head>
+<body>
+
+<!--
+
+  <div .containter>
+ ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+ │                                                                                                              │
+ │ ┌────────────────────┐   ┌─────────────────────────────────────────────────────────────┐   ┌───────────────┐ │
+ │ │                    │   │ <div .category>                                             │   │               │ │
+ │ │  <img>             │   │            ┌─────────────────────────────────────────────┐  │   │ <div>         │ │
+ │ │                    │   │            │ <div .nav>                                  │  │   │   <button>    │ │
+ │ │                    │   │            │                                             │  │   │     Join now  │ │
+ │ │                    │   │            └─────────────Home───Product────Contact───────┘  │   │               │ │
+ │ │                    │   │                                                             │   │               │ │
+ │ └────────────────────┘   └─────────────────────────────────────────────────────────────┘   └───────────────┘ │
+ │                                                                                                              │
+ │                                                                                                              │
+ │                                                                                                              │
+ └──────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+-->
+
+<div class="container">
+    <img class="logo" src="https://rainbowit.net/html/histudy/assets/images/logo/logo.png" alt=""/>
+    <div class="menu">
+        <input type="checkbox" id="toggle">
+        <div class="overlay"></div>
+
+        <div class="category">
+            <button>Category</button>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <div>
+                        <label for="click-home">Home</label>
+                        <input type="checkbox" id="click-home">
+                        <ul class="nav-home">
+                            <li><a href="#">Home 1</a></li>
+                            <li><a href="#">Home 2</a></li>
+                            <li><a href="#">Home 3</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <label for="click-product">Product</label>
+                        <input type="checkbox" id="click-product">
+                        <ul class="nav-home">
+                            <li><a href="#">Product 1</a></li>
+                            <li><a href="#">Product 2</a></li>
+                            <li><a href="#">Product 3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <label for="click-contact">Contact</label>
+                        <input type="checkbox" id="click-contact">
+                        <ul class="nav-home">
+                            <li><a href="#">Contact 1</a></li>
+                            <li><a href="#">Contact 2</a></li>
+                            <li><a href="#">Contact 3</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="join-now">
+        <button>Join Now</button>
+    </div>
+    <label for="toggle" class="mdi mdi-menu mobile-menu"></label>
+</div>
+
+</body>
+</html>

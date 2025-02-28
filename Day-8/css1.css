@@ -1,0 +1,149 @@
+@media screen and (min-width: 500px) {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    body{
+        /*background-color: chocolate;*/
+    }
+    .container {
+        display: flex;
+        align-items: center;
+    }
+    .container .menu {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-right: 100px;
+        margin-left: 10px;
+    }
+    /*.category{*/
+    /*    width: 200px;*/
+    /*    flex-grow: 0;*/
+    /*}*/
+
+    button{
+        background-color: blueviolet;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #click{
+        display: none;
+    }
+    .logo {
+        height: 48px;
+
+    }
+    .nav {
+        flex-grow: 1;
+        flex-shrink: 0;
+        /*border: 1px solid black;*/
+    }
+    .nav>ul>li {
+        display: inline-block;
+    }
+
+    .nav>ul>li>div label {
+        text-decoration: none;
+        margin: 8px 10px;
+        display: inline-block;
+        /*border: 1px solid black;*/
+    }
+    .nav>ul>li>div:hover .nav-home {
+        display: block;
+    }
+    .nav-home{
+        display: none;
+        position: absolute;
+        list-style: none;
+        border-radius: 10px;
+    }
+    .nav-home>li{
+        padding: 10px 0;
+        background-color: deepskyblue;
+    }
+    .nav-home>li:hover{
+        background-color: blueviolet;
+    }
+    .join-now {
+        min-width: 75px;
+    }
+    input{
+        display: none;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    .logo, .action {
+        flex-grow: 1;
+    }
+    .mobile-menu{
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container>.menu>.nav, .container>.join-now, .container>.menu>.category{
+        display: none;
+    }
+    #toggle{
+        display: none;
+    }
+    .overlay{
+        display: none;
+    }
+    .mobile-menu{
+        position: fixed;
+        font-size: 30px;
+        top: 50px;
+        right: 30px;
+        background-color: blueviolet;
+        padding: 10px;
+        border-radius: 20%;
+        color: #fdfdfd;
+
+    }
+    #toggle:checked ~ .nav {
+        display: block;
+        position: absolute;
+        top: 200px;
+        left: -10px;
+        width: 160px;
+    }
+    #toggle:checked ~ .overlay{
+        display: block;
+    }
+    .nav>ul>li>div>ul{
+        display: none;
+    }
+    .nav>ul>li>div>label{
+        padding: 10px 0;
+        display: block;
+        background-color: blueviolet;
+    }
+    .nav>ul>li>div>input:checked + ul{
+        display: block;
+
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background-color: blue;
+        opacity: 0.2;
+    }
+    input{
+        display: none;
+    }
+}
