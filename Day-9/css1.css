@@ -180,18 +180,23 @@ body{
     /*start main-body-tag css*/
     .main-body-tag{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         background: white;
         position: fixed;
         top: 65px;
         left: 270px;
         z-index: 99;
+        width: 100%;
+        gap: 6px;
 
     }
     .main-body-tag-category{
         background-color:#f0f0f0 ;
         margin: 6px 6px;
         border-radius: 6px;
+        padding: 3px 6px;
+        max-height: 24px;
+        flex-grow: 0;
     }
     .main-body-tag-category:hover{
         background-color: #ccc6c6;
