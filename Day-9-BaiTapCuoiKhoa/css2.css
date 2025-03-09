@@ -5,7 +5,7 @@
 
 }
 body{
-    background-color: #bdbaba;
+    /*background-color: #bdbaba;*/
     font-family: "Roboto", "Arial", sans-serif;
 }
 .mdi {
@@ -124,7 +124,7 @@ body{
 /*Start main-video css*/
     .main-video{
         width: 60%;
-        border: 1px solid black;
+        /*border: 1px solid black;*/
         margin-right: 24px;
     }
     .video-screen{
@@ -187,7 +187,7 @@ body{
 /*Start sub-video css*/
 .sub-video{
     width: 30%;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 a{
     text-decoration: none;
