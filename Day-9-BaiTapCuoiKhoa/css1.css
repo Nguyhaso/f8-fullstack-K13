@@ -119,6 +119,7 @@ body{
 /*Start main-body css*/
     .main-body{
         display: flex;
+        width: 100vw;
     }
 /*Start main-body-sidebar css*/
     .main-body-sidebar{
@@ -169,6 +170,7 @@ body{
 
     a{
         text-decoration: none;
+        color: black;
     }
     .main-body-sidebar-small{
         /*background-color: #e25e74;*/
@@ -219,10 +221,11 @@ body{
     position: sticky;
     top: 78px;
     /*align-items: center;*/
+    overflow: hidden;
 
 }
 .main-body-tag-category{
-    background-color: #fff200;
+    background-color: #f0f0f0;
     margin: 6px 6px;
     border-radius: 6px;
     padding: 3px 6px;
@@ -289,7 +292,12 @@ body{
     :root{
         --number-of-item: 2;
     }
-
+    .main-body-sidebar{
+        display: none;
+    }
+    .main-body-sidebar-small{
+        display: block;
+    }
 }
 
 @media screen and (max-width: 576px){

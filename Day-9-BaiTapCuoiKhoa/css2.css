@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #bdbaba;
+    font-family: "Roboto", "Arial", sans-serif;
+}
+.mdi {
+    font-size: 18px;
+}
+    :root{
+        --number-of-item: 3;
+    }
+/*Start Header css*/
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+    .header .header-logo{
+        width: 250px;
+        flex-grow: 0;
+        display: flex;
+        height: 60px;
+        align-items: center;
+        padding-left: 20px;
+    }
+    .header-menu-button{
+        padding: 12px 13px;
+        margin-right: 5px;
+        text-align: center;
+    }
+    .header-menu-button:hover{
+        cursor: pointer;
+        background-color: #ccc6c6;
+        border-radius: 50%;
+    }
+    .youtube-logo{
+        width: 40px;
+    }
+/*Start header-search css        */
+    .header-search{
+        width: calc(100% - 270px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        padding: 25px 0 20px 0;
+        left:270px;
+        top: 0;
+    }
+    .search-bar{
+        margin: auto;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+    }
+    #search {
+        display: inline-block;
+        border-radius: 14px 0 0 14px;
+    }
+    .search-btn{
+        border: none;
+        /*background: none;*/
+        padding: 4px;
+        border-radius: 0 14px 14px 0;
+    }
+    .search-bar .mdi-microphone {
+        margin-left: 16px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        padding: 6px;
+        width: 40px;
+        text-align: center;
+    }
+    .search-bar input{
+        font-size: 16px;
+        height: 28px;
+        width: 300px
+    }
+    .mdi-account, .mdi-bell-outline{
+        /*width: 75px;*/
+        margin: 0 20px;
+        padding: 6px;
+        text-align: center;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+    }
+    .create{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        background: #f0f0f0;
+        padding: 6px;
+        border-radius: 29px;
+    }
+    .mdi-plus{
+        margin-right: 5px;
+    }
+    .create:hover,
+    .mdi-bell-outline:hover,
+    .mdi-account:hover,
+    .mdi-microphone:hover{
+        background-color: #ccc6c6;
+    }
+
+    .mdi-bell-outline, .mdi-account, .create{
+        flex-grow: 0;
+    }
+/*End header-search css        */
+/*End Header css*/
+/**/
+/*Start main-body css*/
+    .main-body{
+        margin: 0 100px;
+        display: flex;
+    }
+/*Start main-video css*/
+    .main-video{
+        width: 60%;
+        border: 1px solid black;
+        margin-right: 24px;
+    }
+    .video-screen{
+        /*object-fit: fill;*/
+    }
+    .video-screen iframe{
+        width: 100%;
+        height: 480px;
+        border-radius: 15px;
+        object-fit: none;
+    }
+    .video-infor{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 12px 12px;
+    }
+    .video-infor-channel{
+        display: flex;
+    }
+    .video-infor-channel img{
+        width: 36px;
+        border-radius: 50%;
+        margin-right: 16px;
+    }
+    .channel-text div{
+        font-size: 16px;
+    }
+    .channel-text span{
+        font-size: 12px;
+        color: #606060;
+    }
+    .video-infor>div, .video-infor>div>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-infor>div>.channel-react{
+        background-color: #f0f0f0;
+        border-radius: 16px 16px 16px 16px;
+        padding: 8px 12px;
+        margin: 0 12px;
+    }
+    .video-infor>div>div>.channel-react{
+        background-color: #f0f0f0;
+        padding: 6px 12px;
+    }
+    .video-infor>div>div>.channel-react:first-child{
+        border-radius: 16px 0 0 16px;
+        border-right: 2px solid #b6b6b6;
+    }
+    .video-infor>div>div>.channel-react:last-child{
+        border-radius: 0 16px 16px 0;
+    }
+    .video-infor .channel-react:hover{
+        background-color: #ccc6c6;
+    }
+
+/*End main-video css*/
+/*Start sub-video css*/
+.sub-video{
+    width: 30%;
+    border: 1px solid black;
+}
+a{
+    text-decoration: none;
+    color: black
+}
+.video-tag{
+    display: flex;
+}
+.video-tag-category{
+    background-color: #f0f0f0;
+    margin: 6px 6px;
+    border-radius: 6px;
+    padding: 6px 6px;
+    /*max-height: 24px;*/
+    /*flex: 1;*/
+
+}
+.video-tag-category:hover{
+    background-color: #ccc6c6;
+}
+.video-small{
+    display: flex;
+    width: 100%;
+    margin: 12px 0;
+    position: relative;
+}
+.video-small-3dot{
+    position: absolute;
+    top: -5px;
+    right: -20px;
+    font-size: 25px;
+}
+.video-small .video-thumbnail{
+    width: 80%;
+    margin: 0 6px;
+    border: 1px solid black;
+
+}
+.video-small .video-thumbnail img{
+    object-fit: fill;
+    width: 100%;
+}
+.video-small-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.video-small-text div:first-child{
+    font-size: 16px;
+}
+.video-small-text div:nth-child(2),
+.video-small-text div:nth-child(3){
+    color: #606060;
+    font-size: 12px;
+}
+/*End sub-video css*/
+/*End main-body css*/
+
+
+
+@media screen and (max-width: 576px){
+    :root{
+        --number-of-item: 1;
+    }
+/*Start header css*/
+    .header .header-logo{
+        width: 120px;
+    }
+    .header-logo h1{
+        display:none;
+    }
+    .header-search{
+        width: 100%;
+    }
+    .header-search .search-bar #search{
+        display: none;
+    }
+    .search-btn{
+        border-radius: 50%
+    }
+/*End header css*/
+/*Start main body css*/
+    .main-body{
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+/*Start main-video css*/
+    .main-video{
+        width: 70%;
+
+    }
+    .video-screen iframe{
+        height: 200px;
+    }
+    .video-infor{
+        flex-direction: column;
+    }
+    .video-infor>div:first-child{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .video-infor>div>div>span:nth-child(2){
+        display: none;
+    }
+    .video-infor>div:nth-child(2){
+        display: flex;
+        overflow-x: hidden;
+        flex-direction: row;
+        justify-content: left;
+        flex-shrink: 0;
+    }
+    .video-infor>div>.channel-react{
+        margin: 0 3px;
+        white-space: nowrap;
+    }
+    .video-infor>div>div>.channel-react{
+        white-space: nowrap;
+    }
+
+/*end main-video css*/
+/*Start sub-video*/
+    .sub-video{
+        width: auto;
+        margin:0 75px 0 60px;
+        justify-content: center;
+    }
+/*End main body css*/
+
+}
