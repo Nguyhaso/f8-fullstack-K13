@@ -1,49 +1,71 @@
 // Bài 1 số nguyên tố
 //
-//     var x = 123
-//     var j = 0
-//       │
-//       │  if x ===2 || x ===3
-//       │
-//       ├─────────────────►  x la so nguyen to
-//       │
-//       │
-//       │
-//       │
-//       │
-//       │
-//       │
-//       │
-//       ▼
-//        for ( i = 2; i<=3 ; i ++)
-//         if (x%i ===0)
-//           │
-//           │    yes
-//           └───────────────►   j = j+1
 //
-//       if j > 0 ──────────►  x khong phai so nguyen to
+//         var x = 1213
+//         var nguyento = true
+//               │
+//               │
+//               ▼
+//          if x < 2
+//               │
+//               │
+//               │   yes
+//               ├─────────►  nguyento = false
+//               │
+//               │
+//               │ no
+//               │
+//               ▼
+//           if else x = 2
+//               │
+//               │ yes
+//               ├────────►    nguyento = true
+//               │
+//               │ no
+//               │
+//               ▼
+//           if else x%2 ===0
+//               │
+//               │ yes
+//               ├────────►     nguyento = false
+//               │ no
+//               ▼
+//           for (i = 3; i < sqrt(x), i++)
+//              if( x%3 ===0)
+//               │
 //               │  yes
-//               │
-//               │
-//               └──────────►  x la so nguyen to
-//                  no
+//               └───────────►  nguyento = false
+//                              break
 //
+//         if nguyento = true  ┬─────►  x la so nguyen to
+//                             │ yes
+//                             │
+//                             └─────►  x khong phai so nguyen to
+//                               no
 //
-var x = 1231 // check if x is prime number?
-var j = 0
-if (x === 2 || x === 3) {
-    console.log("x la so nguyen to")
-} else {
-    for (var i = 2; i <= 3; i++) {
+var x = 217 // check if x is prime number?
+var nguyento = true
+if (x < 2){
+    nguyento = false
+}
+else if (x === 2){
+    nguyento = true
+}
+else if ( x%2 ===  0){
+    nguyento= false
+}
+else {
+    for (var i = 3; i <= x ** 0.5; i = i + 2) {
         if (x % i === 0) {
-            j = j + 1
+            nguyento = false;
+            break;
         }
     }
-    if (j > 0 ) {
-        console.log(x, 'khong phai so nguyen to')
-    }
-    else {
-        console.log(x," la so nguyen to")
-
-    }
 }
+if (nguyento === true){
+    console.log(x, "la so nguyen to")
+}
+else {
+    console.log(x, "khong phai so nguyen to")
+}
+
