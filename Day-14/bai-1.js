@@ -13,9 +13,61 @@ const companyB = [
 ];
 
 //Bai 1
-let objA1 ={}
+/*
+
+                           let companyA=[....]
+                           let companyB=[...]
+                                   │
+                                   │
+                                   │
+                                   ▼
+ create obj from companyA  ┌──────────────────────────────────────────┐
+           │               │  let objA = {}                           │
+           │               │                                          │
+           │               │       │                                  │
+           │               │       │                                  │
+           └──────────────►│       │                                  │
+                           │       ▼                                  │
+                           │  for i = 0                               │
+                           │      │                                   │
+                           │      │                                   │
+                           │      ▼                                   │
+                           │   i < companyA.length                    │
+                           │       │                                  │
+                           │       │                                  │
+                           │       ▼                                  │
+                           │   objA[               ]=companyA[i]      │
+                           │                                          │
+                           │                                          │
+                           │                                          │
+                           │                                          │
+                           └────────┬─────────────────────────────────┘
+                           ┌────────────────────────────────────────────────┐
+    find same name employee│    for i = 0                                   │
+            │              │        │                                       │
+            │              │        │                                       │
+            │              │        │                                       │
+            │              │        ▼                                       │
+            │              │    i < companyB.length                         │
+            └─────────────►│         │                                      │
+                           │         │                                      │
+                           │         │                                      │
+                           │         ▼                                      │
+                           │    objA[companyB[i].name] !== undifined   ?    │
+                           │         │                    │                 │
+                           │         │yes                 │ No              │
+                           │         ▼                    ▼                 │
+                           │     the same name          do nothing          │
+                           │                                                │
+                           └────────────────────────────────────────────────┘
+
+
+
+ */
+let objA1 ={}, c1 = 0
 for (let i = 0; i < companyA.length ; i++) {
     objA1[companyA[i].name] = {id: companyA[i].id, age: companyA[i].age}
+    c1 = c1 +1
 }
 console.log(objA1);
 for (let j = 0; j < companyB.length; j++) {
@@ -23,11 +75,13 @@ for (let j = 0; j < companyB.length; j++) {
     if (objA1[similarName] !== undefined) {
         console.log("Id",objA1[similarName].id, "name", similarName);
     }
+    c1 = c1 +1
 }
 
-
+console.log(c1);
 
 //Bai 2
+// same with Bai 1, just change the key of objA from name =>> nam + age
 
 let objA2 = {}
 for (let i = 0; i < companyA.length; i++) {
