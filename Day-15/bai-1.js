@@ -16,44 +16,39 @@ const employees = [
 
 
 
-                             companies = [company, company, company]
-                             employees = [employee, employee, employee]
-                                    │
-                                    │
-                                    ▼
-                   //filter      employee.companyId === company.Id ?
-                                    │
-                                    │
-                                    │  yes
-                                    │
-                                    │
-                                    ▼
-                               create array employeesList ──────────────────────────────────┐
-                                    │                                                       │
-                                    │                                                       │
-                                    │                                                       │
-                                    │                                                       │
-                                    │                                                       │
-                                    ▼                                                       │
-                              totalSalary += employeesList.salary                           │
-                                                                                            │
-           ┌───────────────── averageSalary = totalSalary / employeesList.salary.length      │
-           │                                                                                │
-           │                                                                                │
-           │                                                                                │
-           │       //map     companies.map(company())                                       │
-           │                                                                                │
-           │                 return    company.name                                         │
-           │                                                                                │
-           │                                                                                │
-           │                           employeesList ◄──────────────────────────────────────┘
-           │
-           └─────────────────────────► averageSalary
-
-
-
-
-
+                  companies = [company, company, company]
+                  employees = [employee, employee, employee]
+                         │
+                         │
+                         ▼
+        //filter      employee.companyId === company.Id ?
+                         │
+                         │
+                         │  yes
+                         │
+                         │
+                         ▼
+                    create array employeesList ──────────────────────────────────┐
+                         │                                                       │
+                         │                                                       │
+                         │                                                       │
+                         │                                                       │
+                         ▼                                                       │
+                 ┌──────────────────────────────────────────────────────────┐    │
+                 │ totalSalary += employeesList.salary                      │    │
+                 │                                                          │    │
+┌────────────────│ averageSalary = totalSalry / employeesList.salary.length │    │
+│                └──────────────────────────────────────────────────────────┘    │
+│                                                                                │
+│                                                                                │
+│       //map     companies.map(company())                                       │
+│                                                                                │
+│                 return  { company.name                                         │
+│                                                                                │
+│                                                                                │
+│                           employeesList ◄──────────────────────────────────────┘
+│
+└─────────────────────────► averageSalry  }
 
  */
 const companiesAndEmployees = companies.map(company => {
