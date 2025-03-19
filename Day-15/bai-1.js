@@ -67,4 +67,3 @@ const companiesAndEmployees = companies.map(company => {
     }
 })
 
-console.log(companiesAndEmployees);

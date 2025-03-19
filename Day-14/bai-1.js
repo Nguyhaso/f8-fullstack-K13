@@ -77,26 +77,36 @@ for (let j = 0; j < companyB.length; j++) {
     }
     c1 = c1 +1
 }
-
+/*
+cach 2:
+1. creat a memberA arr
+2. foreach to push name of each member in company into memberA array
+3. checking by using if memberA.include(companyB.name)
+ */
 console.log(c1);
 
 //Bai 2
 // same with Bai 1, just change the key of objA from name =>> nam + age
 
-let objA2 = {}
-for (let i = 0; i < companyA.length; i++) {
-    objA2[companyA[i].name + companyA[i].age] = companyA[i].id;
-}
-console.log(objA2);
-for (let i = 0; i < companyB.length; i++) {
-    let similarNameAge = companyB[i].name + companyB[i].age;
-    if (objA2[similarNameAge] !== undefined) {
-        console.log( similarNameAge );
-    }
-}
-
-
-
+// let objA2 = {}
+// for (let i = 0; i < companyA.length; i++) {
+//     objA2[companyA[i].name + companyA[i].age] = companyA[i].id;
+// }
+// console.log(objA2);
+// for (let i = 0; i < companyB.length; i++) {
+//     let similarNameAge = companyB[i].name + companyB[i].age;
+//     if (objA2[similarNameAge] !== undefined) {
+//         console.log( similarNameAge );
+//     }
+// }
+//
+const memberA = companyA.map( cpn =>{
+    return `${cpn.name}-${cpn.age}`
+})
+companyB.forEach(cpn =>{
+    if (memberA.includes(`${cpn.name}-${cpn.age}`))
+        console.log(cpn.name)
+})
 
 
 
