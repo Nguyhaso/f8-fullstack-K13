@@ -58,4 +58,8 @@ orders.forEach(order => {
 
 
 })
-console.log(customersObj)
+const result = Object.values(customersObj).sort((a, b) => b.totalSpent - a.totalSpent)
+result.forEach(customer =>{
+    customer.order = Object.values(customer.order).sort((a, b) => b.productSpent - a.productSpent)
+})
+console.log(result)
