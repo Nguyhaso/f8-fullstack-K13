@@ -20,10 +20,7 @@ destructuring  const {key1, key2} = user
                    ▼
   function    return key1 key2
  */
-const getFullName = ()=>{
-    const { firstName, lastName } = user;
-    return `${firstName} ${lastName}`;
-}
+const getFullName = ({ firstName, lastName })=> `${firstName} ${lastName}`
 
 console.log(getFullName(user));
 
@@ -64,9 +61,7 @@ return sum                           │           │
 
 
  */
-const calculateTotal = (arr) => arr.reduce((total, item) => {
-    return total + item.price*item.quantity;
-},0)
+const calculateTotal = (arr) => arr.reduce((total, item) => total + item.price*item.quantity,0)
 
 
 
