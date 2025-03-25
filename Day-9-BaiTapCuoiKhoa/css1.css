@@ -13,6 +13,7 @@ body{
 }
     :root{
         --number-of-item: 3;
+        --side-bar-width: 336px;
     }
 /*Start Header css*/
     .header{
@@ -214,24 +215,22 @@ body{
 /*start main-body-tag css*/
 .main-body-tag{
     display: flex;
-    /*justify-content: flex-start;*/
     background: white;
-    /*width: 100%;*/
     gap: 6px;
     position: sticky;
-    top: 78px;
-    /*align-items: center;*/
-    overflow: hidden;
+    top: 77px;
+    /*overflow: hidden;*/
+    /*flex-wrap: nowrap;*/
+    /*overflow-x: auto;*/
+    /*scrollbar-width: none;*/
 
 }
-.main-body-tag-category{
+.main-body-tag-category {
     background-color: #f0f0f0;
-    margin: 6px 6px;
+    margin: 6px 0px;
     border-radius: 6px;
     padding: 3px 6px;
-    /*max-height: 24px;*/
-    /*flex: 1;*/
-
+    /*white-space: nowrap;*/
 }
 .main-body-tag-category:hover{
     background-color: #ccc6c6;
@@ -247,7 +246,7 @@ body{
 
     }
     .main-body-content-video{
-        flex-basis: calc((100vw - 336px) / var(--number-of-item));
+        flex-basis: calc((100vw - var(--side-bar-width)) / var(--number-of-item));
     }
 
     .main-body-content-video img{
@@ -291,7 +290,9 @@ body{
 @media screen and (max-width: 992px){
     :root{
         --number-of-item: 2;
+        --side-bar-width: 170px;
     }
+
     .main-body-sidebar{
         display: none;
     }
