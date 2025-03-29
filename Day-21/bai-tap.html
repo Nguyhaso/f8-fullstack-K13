@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Roboto;
+    }
+    .container {
+        display: flex;
+    }
+    .side-bar {
+        width: 250px;
+        background-color: rgb(28 36 52);
+        height: 100vh;
+        color: white;
+    }
+
+    .side-bar .logo {
+        font-size: 32px;
+    }
+    .side-bar__header {
+        display: flex;
+        padding: 16px;
+    }
+    .side-bar__item {
+        display: flex;
+        padding: 16px;
+    }
+    .side-bar__header h1 {
+        margin-left: 16px;
+    }
+    .side-bar__item span:first-child {
+        margin: 0 8px 0 16px;
+    }
+    .side-bar__item:hover {
+        background-color: rgb(13, 16, 16);
+        cursor: pointer;
+    }
+    .side-bar__item:nth-of-type(3) {
+        display: block;
+    }
+    .side-bar__item:nth-of-type(3) > div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*.side-bar__item:nth-of-type(3) > div:first-child:active +div {*/
+    /*    background: red;*/
+    /*    display: block;*/
+    /*}*/
+
+    .side-bar__item:nth-of-type(3) > div:nth-child(2) > div{
+        display: none;
+    }
+
+    .side-bar__item__child_item:first-child {
+        margin-top: 16px;
+    }
+    .side-bar__item__child_item {
+        padding: 16px;
+    }
+    #toggle:checked ~ div {
+        display: block;
+    }
+    .body-container {
+        width: calc(100% - 250px);
+    }
+    .table-header {
+        display: flex;
+    }
+    .table-header__cell {
+        /*background-color: red;*/
+        flex-grow: 0;
+    }
+    .table-header__cell:first-child, .table-body .table-body__cell:first-child {
+        width: 64px;
+    }
+    .table-header__cell:last-child, .table-body .table-body__cell:last-child {
+        width: 150px;
+    }
+    .table-header__cell:nth-child(2),
+    .table-header__cell:nth-child(3),
+    .table-body .table-body__cell:nth-child(2),
+    .table-body .table-body__cell:nth-child(3) {
+        /*background-color: green;*/
+        flex-grow: 1;
+    }
+    .table-header {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .table-body, .table-header {
+        display: flex;
+        padding: 16px;
+        border-bottom: 1px solid #ccc;
+    }
+    .table {
+        max-width: 700px;
+        margin: auto;
+    }
+    .edit-btn, .del-btn {
+        color: white;
+        padding: 4px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .edit-btn {
+        background-color: green;
+    }
+    .del-btn {
+        background-color: red;
+    }
+    .overlay {
+        position: fixed;
+        background-color: rgba(100, 100, 100, 0.3);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .dialog {
+        background-color: white;
+        width: 450px;
+        border-radius: 5px;
+    }
+    .dialog__header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        padding: 16px;
+        background-color: rgb(28 36 52);
+        color: white;
+    }
+    .dialog__body__input {
+        padding: 10px;
+        position: relative;
+    }
+    .dialog__body__input span {
+        position: absolute;
+        top: 35%;
+        left: 30px;
+        color: #aaa;
+    }
+    .dialog__body__input input {
+        width: 100%;
+        font-size: 16px;
+        padding: 8px;
+    }
+    .dialog__body__input input:focus + span {
+        color: #333;
+        top: 0;
+        left: 20px;
+        background-color: white;
+    }
+    .dialog__body__input input:focus ~ .dropdown {
+        display: block;
+    }
+    .dropdown {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        background-color: white;
+        width: calc(100% - 20px);
+        border: 1px solid #ccc;
+    }
+    .dropdown__item {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+    .dialog__body__input .icon {
+        position: absolute;
+        left: 93%;
+    }
+
+    .dialog__action {
+        display: flex;
+        padding: 4px;
+    }
+    .dialog__action button {
+        flex-grow: 1;
+        margin: 4px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    .dialog__action button:first-child {
+        background-color: red;
+        color: white;
+        border: none
+    }
+    .dialog__action button:last-child {
+        background-color: green;
+        color: white;
+        border: none
+    }
+</style>
+<body>
+
+<div class="container">
+    <div class="side-bar">
+        <header class="side-bar__header">
+            <span class="mdi mdi-stack-overflow logo"></span>
+            <h1>F8 Admin</h1>
+        </header>
+        <div class="side-bar__item">
+            <span>Menu</span>
+        </div>
+        <div class="side-bar__item">
+            <span class="mdi mdi-account"></span>
+            <span>Quản Lý Đơn Hàng</span>
+        </div>
+        <div class="side-bar__item">
+            <!--        parent-->
+            <div>
+                <label for="toggle">
+                    <span class="mdi mdi-account"></span>
+                    <span>Quản Lý Xe</span>
+                </label>
+                <span class="mdi mdi-chevron-down"></span>
+            </div>
+            <!--        child -->
+            <div>
+                <input id="toggle" type="checkbox" hidden="hidden">
+                <div class="side-bar__item__child">
+                    <div class="side-bar__item__child_item">
+                        <span class="mdi mdi-account"></span>
+                        <span>Quản Lý Xe Máy</span>
+                    </div>
+                    <div class="side-bar__item__child_item">
+                        <span class="mdi mdi-account"></span>
+                        <span>Quản Lý Xe Hơi</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="side-bar__item">
+            <span class="mdi mdi-account"></span>
+            <span>Quản Lý Dịch Vụ</span>
+        </div>
+        <div class="side-bar__item">
+            <span class="mdi mdi-account"></span>
+            <span>Cài Đặt Khác</span>
+        </div>
+    </div>
+
+    <div class="body-container">
+        <h2 style="text-align: center">Members</h2>
+        <div class="table">
+            <div class="table-header">
+<!--                <div class="table-header__cell">Id</div>-->
+<!--                <div class="table-header__cell">Name</div>-->
+<!--                <div class="table-header__cell">Mail</div>-->
+<!--                <div class="table-header__cell">Action</div>-->
+            </div>
+<!--            <div class="table-body">-->
+<!--                <div class="table-body__cell">1</div>-->
+<!--                <div class="table-body__cell">Tran Van A</div>-->
+<!--                <div class="table-body__cell">a@test.con</div>-->
+<!--                <div class="table-body__cell">-->
+<!--                    <button class="edit-btn">-->
+<!--                        <span class="mdi mdi-pencil"></span>-->
+<!--                        edit-->
+<!--                    </button>-->
+<!--                    <button class="del-btn">-->
+<!--                        <span class="mdi mdi-trash-can-outline"></span>-->
+<!--                        delete-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="table-body">-->
+<!--                <div class="table-body__cell">1</div>-->
+<!--                <div class="table-body__cell">Tran Van A</div>-->
+<!--                <div class="table-body__cell">a@test.con</div>-->
+<!--                <div class="table-body__cell">-->
+<!--                    <button class="edit-btn">-->
+<!--                        <span class="mdi mdi-pencil"></span>-->
+<!--                        edit-->
+<!--                    </button>-->
+<!--                    <button class="del-btn">-->
+<!--                        <span class="mdi mdi-trash-can-outline"></span>-->
+<!--                        delete-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="table-body">-->
+<!--                <div class="table-body__cell">1</div>-->
+<!--                <div class="table-body__cell">Tran Van A</div>-->
+<!--                <div class="table-body__cell">a@test.con</div>-->
+<!--                <div class="table-body__cell">-->
+<!--                    <button class="edit-btn">-->
+<!--                        <span class="mdi mdi-pencil"></span>-->
+<!--                        edit-->
+<!--                    </button>-->
+<!--                    <button class="del-btn">-->
+<!--                        <span class="mdi mdi-trash-can-outline"></span>-->
+<!--                        delete-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<div class="overlay">
+    <div class="dialog">
+        <div class="dialog__header">
+            <div class="dialog__header__title">New member</div>
+            <div class="dialog__header__icon">&times</div>
+        </div>
+        <div class="dialog__body">
+            <div class="dialog__body__input">
+                <input type="text"/>
+                <span>Skill</span>
+                <span class="icon">v</span>
+                <div class="dropdown">
+                    <div class="dropdown__item">Python</div>
+                    <div class="dropdown__item">JS</div>
+                </div>
+            </div>
+
+            <div class="dialog__body__input">
+                <input type="text"/>
+                <span>Name</span>
+            </div>
+            <div class="dialog__body__input">
+                <input type="text"/>
+                <span>Email</span>
+            </div>
+        </div>
+        <div class="dialog__action">
+            <button class="close-overlay">Close</button>
+            <button>Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tableHeaderList = [
+        {value : 'id' , text : 'Id'},
+        {value : 'name' , text : 'Name'},
+        {value : 'mail' , text : 'Mail'},
+        {value : 'action' , text : 'Action'},
+    ]
+    const tableHeader = document.querySelector('.table-header');
+
+    const tableBodyList = [
+        {id : 1, name: 'Tran Van A', mail: 'test1@test.com', action: 'action1'},
+        {id : 2, name: 'Tran Van B', mail: 'test2@test.com', action: 'action1'},
+        {id : 3, name: 'Tran Van C', mail: 'test3@test.com', action: 'action1'},
+        {id : 4, name: 'Tran Van D', mail: 'test4@test.com', action: 'action1'},
+    ]
+    // select the table
+    const table = document.querySelector('.table');
+
+
+    //Create the tableHeader
+    let tableHeaderInnerHTML = '';
+    tableHeaderList.forEach(header => {
+        tableHeaderInnerHTML += `<div class="table-header__cell">${header.text}</div>`
+    })
+    tableHeader.innerHTML = tableHeaderInnerHTML;
+
+    //Create the tableBody
+    tableBodyList.forEach(member=>{
+        const tableBody = document.createElement('div');
+        tableBody.setAttribute('class', 'table-body');
+        let tableBodyInnerHTML=''
+        // Loop through each member[key]
+        Object.keys(member).forEach(key=> {
+
+            // if key = acction => button
+            if(key === 'action') {
+                tableBodyInnerHTML += `
+                    <div class="table-body__cell">
+                        <button class="edit-btn">
+                            <span class="mdi mdi-pencil"></span>
+                            edit
+                        </button>
+                        <button class="del-btn">
+                            <span class="mdi mdi-trash-can-outline"></span>
+                            delete
+                        </button>
+                    </div>`
+            }
+
+            // else => member infor
+            else
+            tableBodyInnerHTML += `<div class="table-body__cell">${member[key]}</div>`
+        })
+
+        // push table Body onto table
+       tableBody.innerHTML = tableBodyInnerHTML
+       table.append(tableBody);
+    })
+    // select <div> overlay
+    const overlay = document.querySelector('.overlay');
+
+    //add cursor pointer for all button
+    document.querySelectorAll('button').forEach(btn => {
+        btn.style.cursor = 'pointer';
+    })
+
+
+    // event for button click
+    const editBtns = document.querySelectorAll('.edit-btn');
+    editBtns.forEach(edit => {
+      edit.addEventListener('click', () => {
+        overlay.style.display = 'block';
+      })
+    })
+
+    const closeOverlay = document.querySelector('.close-overlay');
+    closeOverlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    })
+
+
+</script>
+</body>
+</html>
