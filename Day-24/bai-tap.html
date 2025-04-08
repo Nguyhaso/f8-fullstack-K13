@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Hải Sơn - Day 24</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ccc6c6;
+        font-size: 20px;
+    }
+    .container{
+        width: 300px;
+        background-color: white;
+    }
+    .title{
+        text-align: center;
+        background-color: black;
+        color: white;
+    }
+    .add-task{
+        display: flex;
+    }
+    .add-input{
+        width: calc(100% - 50px);
+        border: 1px solid black;
+        border-right: 0;
+        outline: none;
+        padding: 10px;
+    }
+    .add-button{
+        background-color: #ae63e5;
+        color: white;
+        width: 50px;
+        outline: none;
+        /*border: none;*/
+    }
+    .todo-list{
+        list-style: none;
+    }
+    .done {
+        text-decoration: line-through;
+    }
+    .todo-list li{
+        cursor: pointer;
+    }
+    .todo-list li:hover{
+        background-color: lightgray;
+    }
+</style>
+<body>
+<div class="container">
+    <h1 class="title"> To Do List</h1>
+    <div class="add-task">
+        <input class="add-input" type="text" placeholder="Enter task here">
+        <button class="add-button">Add</button>
+    </div>
+    <ul class="todo-list">
+        <li>Get up early</li>
+        <li>Prepare lunch</li>
+    </ul>
+</div>
+
+<script>
+    const toDo = document.querySelector('.todo-list')
+    const addButton = document.querySelector('.add-button')
+    const addInput = document.querySelector('.add-input')
+
+
+
+    // append new task from input
+    addButton.addEventListener('click', () => {
+        if (addInput.value !== '') {
+            const newTask = document.createElement('li')
+            newTask.textContent = addInput.value
+            toDo.append(newTask)
+            addInput.value = ''
+        } else return
+    })
+
+    // change style when click ( check whenever task finished)
+   toDo.addEventListener('click',(event)=>{
+       if (event.target.tagName.toLowerCase() === 'li') {
+           event.target.classList.toggle('done')
+       }
+   })
+
+</script>
+</body>
+</html>
