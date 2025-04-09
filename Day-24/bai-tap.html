@@ -54,9 +54,33 @@
     }
     .todo-list li{
         cursor: pointer;
+        position: relative;
+        padding-right: 30px;
     }
     .todo-list li:hover{
         background-color: lightgray;
+    }
+    .close{
+        position: absolute;
+        right: 10px;
+        top:50%;
+        transform: translateY(-50%);
+        bottom: 0;
+        font-size: 20px;
+        color: red;
+        display: none;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+    }
+    .close:hover{
+        background-color: #3d58ec;
+        border-radius: 50%;
+    }
+    .todo-list li:hover .close{
+        display: inline-block;
     }
 </style>
 <body>
@@ -67,8 +91,8 @@
         <button class="add-button">Add</button>
     </div>
     <ul class="todo-list">
-        <li>Get up early</li>
-        <li>Prepare lunch</li>
+        <li>Get up early<span class="close">&times;</span></li>
+        <li>Prepare lunch<span class="close">&times;</span></li>
     </ul>
 </div>
 
@@ -83,7 +107,7 @@
     addButton.addEventListener('click', () => {
         if (addInput.value !== '') {
             const newTask = document.createElement('li')
-            newTask.textContent = addInput.value
+            newTask.innerHTML = `${addInput.value} <span class="close">&times;</span>`
             toDo.append(newTask)
             addInput.value = ''
         } else return
@@ -93,6 +117,8 @@
    toDo.addEventListener('click',(event)=>{
        if (event.target.tagName.toLowerCase() === 'li') {
            event.target.classList.toggle('done')
+       } else if (event.target.classList.contains('close')){
+           event.target.parentElement.remove()
        }
    })
 
