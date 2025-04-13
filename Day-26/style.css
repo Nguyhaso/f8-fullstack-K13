@@ -1,0 +1,126 @@
+/*.job-list{*/
+/*    width: 300px;*/
+/*}*/
+/*.job-item{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.completed {*/
+/*    text-decoration: line-through;*/
+/*}*/
+/*.job-item:hover{*/
+/*    background-color: lightyellow;*/
+/*    cursor: pointer;*/
+/*}*/
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button#save {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button#save:hover {
+    background-color: #45a049;
+}
+
+/* Job List Container */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each Job Item */
+.job-item {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Job Title */
+.job-title {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Completed Tasks */
+.job-title.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Actions (Update + Delete Buttons) */
+.job-action {
+    display: flex;
+    gap: 5px;
+}
+
+/* Buttons inside each job */
+.job-action button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Update Button */
+.update-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #1976D2;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
