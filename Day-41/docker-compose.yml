@@ -1,0 +1,12 @@
+services:
+  web:
+    container_name: f8-k13-todoList2
+    image: node:20.10.0
+    working_dir: /app/web
+    environment:
+      - .env
+    volumes:
+      - './web:/app/web'
+    ports:
+      - '3000:3000'
+    command: ['npm', 'run', 'dev']
