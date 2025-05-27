@@ -116,6 +116,7 @@ const actions = {
 }
 
 const reducer = (state: any, action: any) => {
+  // @ts-ignore
   const doThis = actions[action.type]
   return doThis ? doThis(state, action) : state;
 }
