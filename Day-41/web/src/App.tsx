@@ -11,11 +11,11 @@ const initialState = {
 };
 
 const actions = {
-  setInput: (state, action) => ({
+  setInput: (state:any, action:any) => ({
     ...state,
     inputValue: action.value
   }),
-  addTask: (state) => {
+  addTask: (state:any) => {
     if (state.inputValue.trim() === '') return state;
     return {
       ...state,
@@ -23,21 +23,21 @@ const actions = {
       inputValue: ''
     };
   },
-  deleteTask: (state, action) => {
+  deleteTask: (state:any, action:any) => {
     const tasks = [...state.tasks];
     tasks.splice(action.index, 1);
     return { ...state, tasks };
   },
-  editTask: (state, action) => ({
+  editTask: (state:any, action:any) => ({
     ...state,
     inputCurrent: state.tasks[action.index],
     editingIndex: action.index
   }),
-  onChangeEdit: (state, action) => ({
+  onChangeEdit: (state:any, action:any) => ({
     ...state,
     inputCurrent: action.value
   }),
-  onSave: (state, action) => {
+  onSave: (state:any, action:any) => {
     const tasks = [...state.tasks];
     tasks[action.index] = action.value;
     return {
@@ -49,7 +49,9 @@ const actions = {
   }
 };
 
-const reducer = (state, action) => {
+const reducer = (state:any, action:any) => {
+
+  // @ts-ignore
   const fn = actions[action.type];
   return fn ? fn(state, action) : state;
 };
@@ -61,6 +63,7 @@ export default function App() {
   useEffect(() => {
     if (state.editingIndex !== null) {
       setTimeout(() => {
+        // @ts-ignore
         inputRef.current?.focus();
       }, 0);
     }
@@ -78,7 +81,7 @@ export default function App() {
 
       <h2>Task List</h2>
       <ul>
-        {state.tasks.map((task, index) => (
+        {state.tasks.map((task:any, index:any) => (
           <li key={index}>
             {state.editingIndex === index ? (
               <>
