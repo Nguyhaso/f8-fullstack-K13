@@ -4,28 +4,27 @@ import {Box, Button, Container, Paper, Typography} from "@mui/material";
 import questions from "./store/data/questions.ts";
 import {incrementScore, resetScore} from "./store/slicer/score.ts";
 import {nextQuestion, resetQuestion} from "./store/slicer/questionIndex.ts";
-import {useState} from "react";
+import {selectedOption, clearSelectedOption} from "./store/slicer/selectedOption.ts";
 
 function App() {
   const dispatch = useDispatch()
   const index = useSelector((state: any) => state.questionIndex)
   const score = useSelector((state: any) => state.score)
-  const [selected, setSelected] = useState<string | null>(null)
-
+  const selected = useSelector((state: any) => state.selectedOption)
   const curQuestion = questions[index]
   const optionLabels = ['A', 'B', 'C', 'D']
 
 //Check answer
   const checkAnswer = (option: string) => {
     if(selected) return
-    setSelected(option)
+    dispatch(selectedOption(option))
     if (option === curQuestion.answer) dispatch(incrementScore())
   }
 
 //Next question
   const nextQuestion1 = () => {
     dispatch(nextQuestion())
-    setSelected(null)
+    dispatch(clearSelectedOption())
   }
 
 //Reset question
