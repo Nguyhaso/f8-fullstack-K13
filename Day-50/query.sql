@@ -60,6 +60,7 @@ FROM students;
 SELECT course_name, teachers.full_name as teacher
 FROM courses
 LEFT JOIN teachers ON courses.teacher_id=teachers.teacher_id;
+
 -- Câu 12. Liệt kê tên sinh viên và tên các khóa học họ đã đăng ký
 SELECT
     students.student_id,
