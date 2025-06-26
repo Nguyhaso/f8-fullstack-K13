@@ -1,0 +1,10 @@
+services:
+  web:
+    container_name: F8-NextJS2
+    image: node:20.10.0
+    working_dir: /app/web
+    volumes:
+      - './nextjs2:/app/web'
+    ports:
+      - '3000:3000'
+    command: ["npm", "run", "dev"]
