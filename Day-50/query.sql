@@ -59,17 +59,57 @@ FROM students;
 --  Câu 11. Liệt kê khóa học và tên giảng viên
 SELECT course_name, teachers.full_name as teacher
 FROM courses
-LEFT JOIN teachers ON courses.teacher_id=teachers.teacher_id;
-
+         LEFT JOIN teachers ON courses.teacher_id=teachers.teacher_id;
 -- Câu 12. Liệt kê tên sinh viên và tên các khóa học họ đã đăng ký
 SELECT
     students.student_id,
     students.full_name AS student_name,
     STRING_AGG(courses.course_name, ', ') AS course_list
-FROM enrollments
-         JOIN students ON enrollments.student_id = students.student_id
-         JOIN courses ON enrollments.course_id = courses.course_id
-GROUP BY students.student_id, students.full_name
+FROM students
+         LEFT JOIN enrollments ON students.student_id = enrollments.student_id
+         LEFT JOIN courses ON enrollments.course_id = courses.course_id
+GROUP BY students.student_id
 ORDER BY students.student_id;
+-- Câu 13. Cập nhật số điện thoại sinh viên có email test@gmail.com
+UPDATE students
+SET phone ='090900000'
+WHERE email='student1@gmail.com';
+-- Câu 14. Cập nhật tên môn học
+UPDATE courses
+SET course_name='Peace for World'
+WHERE course_name='Nuclear Boom Class';
+-- Câu 15. Xoá sinh viên có email test@gmail.com
+DELETE FROM students
+WHERE email='student2@gmail.com';
+-- Câu 16. Xoá môn học có tên “Backend”
+DELETE FROM courses
+WHERE course_name='Basis of Atom';
+-- Câu 17. Liệt kê tên các môn học và tên giảng viên phụ trách
+SELECT courses.course_name, teachers.full_name
+FROM courses
+         JOIN teachers ON courses.teacher_id=teachers.teacher_id;
+-- Câu 18. Liệt kê tất cả các môn học và tên giảng viên (nếu có). Môn học chưa có giảng viên vẫn hiển thị.
+SELECT courses.course_name, teachers.full_name
+FROM courses
+         LEFT JOIN teachers ON courses.teacher_id=teachers.teacher_id;
+-- Câu 19. Hiển thị tên sinh viên và mã khóa học mà sinh viên đã đăng ký.
+SELECT
+    students.student_id,
+    students.full_name AS student_name,
+    STRING_AGG(courses.course_id::text, ', ') AS course_list
+FROM students
+         LEFT JOIN enrollments ON students.student_id = enrollments.student_id
+         LEFT JOIN courses ON enrollments.course_id = courses.course_id
+GROUP BY students.student_id
+ORDER BY students.student_id;
+-- Câu 20*. Hiển thị toàn bộ môn học và sinh viên đăng ký (nếu có). Môn học chưa có sinh viên vẫn hiển thị.
 
-
+SELECT
+    courses.course_id,
+    courses.course_name,
+    STRING_AGG(students.full_name, ',') AS student_list
+FROM courses
+         LEFT JOIN enrollments ON courses.course_id = enrollments.course_id
+         LEFT JOIN students ON students.student_id = enrollments.student_id
+GROUP BY courses.course_id
+ORDER BY courses.course_id;a
