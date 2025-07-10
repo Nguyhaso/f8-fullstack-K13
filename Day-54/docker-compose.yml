@@ -1,0 +1,25 @@
+services:
+  api:
+    container_name: f8-k13-backend1
+    image: node:22.9.0
+    working_dir: /app/api
+    volumes:
+      - ./api:/app/api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    command: ["npm", "run", "start"]
+
+
+  db:
+    container_name: f8-k13-db_250710
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=default
+    ports:
+      - "5000:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
