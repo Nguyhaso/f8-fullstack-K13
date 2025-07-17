@@ -1,14 +1,15 @@
 import {Column, Entity} from "typeorm";
 import {BaseEntity} from "../base/entities";
 
-@Entity('subjects')
-export class SubjectEntity extends BaseEntity{
+@Entity('files')
+export class FileEntity extends BaseEntity{
+
 
   @Column()
-  code: string;
+  url: string;
 
   @Column()
-  name: string;
+  key: string;
 
 
 }

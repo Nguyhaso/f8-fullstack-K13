@@ -1,7 +1,7 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, PrimaryGeneratedColumn} from "typeorm";
 
-@Entity('user')
-export class BaseEntity {
+
+export class Base1Entity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -10,20 +10,12 @@ export class BaseEntity {
   })
   createdAt: Date
 
-  @Column({
-    nullable: true
-  })
-  createdBy: number
 
   @Column({
     nullable: true
   })
   modifiedAt: Date
 
-  @Column({
-    nullable: true
-  })
-  modifiedBy: number
 
   @Column({
     nullable: true
@@ -35,8 +27,29 @@ export class BaseEntity {
   })
   deletedBy: number
 
+}
+
+
+
+
+export class BaseEntity extends Base1Entity{
+
+
+  @Column({
+    nullable: true
+  })
+  createdBy: number
+
+
+  @Column({
+    nullable: true
+  })
+  modifiedBy: number
+
+
   @Column({
     default: true
   })
   active: boolean
 }
+

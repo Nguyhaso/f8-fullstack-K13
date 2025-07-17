@@ -1,13 +1,13 @@
 import {Inject, Injectable} from "@nestjs/common";
 import { Repository } from 'typeorm';
-import {SubjectEntity} from "./entities";
+import {UsersEntity} from "./entities";
 import {SUBJECT_REPOSITORY} from "../../shares";
 
 @Injectable()
-export class SubjectService {
+export class UserService {
   constructor(
     @Inject(SUBJECT_REPOSITORY)
-    private photoRepository: Repository<SubjectEntity>,
+    private photoRepository: Repository<UsersEntity>,
   ) {}
   private classes:any = []
 

@@ -1,0 +1,37 @@
+1. Subject – Môn học
+
+id, code, name, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+2. Class – Lớp học
+
+id, name, code, subject_id, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+3. User – Người dùng
+
+id, email, name, password, role, status, avatar, parent_name, parent_phone, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+4. ClassUser – Quan hệ giữa lớp và người dùng
+
+id, class_id, user_id, created_at, modified_at, deleted_at, deleted_by
+5. ExamGroup – Nhóm bài thi
+
+id, name, class_id, start_time, wait_time, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active, is_once, is_save_local
+6. Exam – Đề thi
+
+id, name, exam_group_id, class_id, code, number_of_question, total_time, correct_answer, description, device, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+7. Question – Câu hỏi
+
+id, exam_id, index, type, correct_answer, topic_id, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by
+8. Answer – Câu trả lời học sinh
+
+id, exam_result_id, question_id, answer, is_correct, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+9. ExamResult – Kết quả bài làm
+
+id, user_id, exam_id, status, answers, number_of_correct_answer, score, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by
+10. Topic – Chủ đề câu hỏi theo môn học
+
+id, subject_id, code, name, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+11. File – Tệp tin đính kèm
+
+id, url, key, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+12. Job – Công việc
+
+id, name, created_at, created_by, modified_at, modified_by, deleted_at, deleted_by, active
+

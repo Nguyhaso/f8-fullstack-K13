@@ -1,16 +1,19 @@
 import {Column, Entity} from "typeorm";
 import {BaseEntity} from "../base/entities";
 
-@Entity('classes')
-export class ClassEntity extends BaseEntity{
+@Entity('topics')
+export class TopicEntity extends BaseEntity{
+
 
   @Column()
-  code: string;
+  subject_id: number;
+
+  @Column()
+  code: number;
 
   @Column()
   name: string;
 
-  @Column()
-  subject_id: number;
+
 
 }
