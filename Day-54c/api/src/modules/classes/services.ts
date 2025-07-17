@@ -8,13 +8,14 @@ export class ClassService {
     return this.classes;
   }
 
-  create(class1:any){
-    this.classes.push(class1);
-    return class1
+  create(cls:any){
+    this.classes.push(cls);
+    console.log(cls);
+    return cls
   }
 
-  update(id, class1){
-    return class1
+  update(id, cls){
+    return cls
   }
 
   delete(id){

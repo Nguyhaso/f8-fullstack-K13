@@ -1,0 +1,5 @@
+export const SUBJECT_REPOSITORY= Symbol("SUBJECT_REPOSITORY");
+export const DATA_SOURCE= Symbol("DATA_SOURCE");
+export const CLASS_REPOSITORY= Symbol("CLASS_REPOSITORY");
+export const CLASS_USER_REPOSITORY= Symbol("CLASS_USER_REPOSITORY");
+

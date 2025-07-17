@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import {IsNumber, IsString} from "class-validator";
-import { TeacherReqI } from "../shares";
+import { TeacherReqI } from "../../shares";
 
 export class TeacherReq implements TeacherReqI {
   // @ApiProperty({

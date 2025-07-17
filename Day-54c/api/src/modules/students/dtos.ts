@@ -1,6 +1,6 @@
 import {ApiProperty} from "@nestjs/swagger";
 import {IsNotEmpty, IsNumber, IsString} from "class-validator";
-import {AvatarI, StudentReqI} from "../shares";
+import {AvatarI, StudentReqI} from "../../shares";
 
 class Avatar implements AvatarI {
   @ApiProperty()

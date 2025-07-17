@@ -1,18 +1,18 @@
 import {ApiProperty} from "@nestjs/swagger";
 import {IsNotEmpty, IsNumber, IsString} from "class-validator";
-import {ClassReqI} from "../../shares";
+import {SubjectReqI} from "../../shares";
 
 
-export class ClassReq implements ClassReqI {
+export class SubjectReq implements SubjectReqI {
   @ApiProperty({
-    example: "<UNK>",
+    example: "test name",
   })
   @IsString()
   @IsNotEmpty()
   name: string
 
   @ApiProperty({
-    example: "code123",
+    example: "test code",
     nullable: true,
     required: false,
   })

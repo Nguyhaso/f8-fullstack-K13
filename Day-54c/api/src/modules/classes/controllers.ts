@@ -14,13 +14,13 @@ export class ClassController {
     return this.classService.get()
   }
   @Post()
-  creat(@Body()class1: ClassReq){
-    return this.classService.create(class1)
+  creat(@Body()cls: ClassReq){
+    return this.classService.create(cls)
   }
 
   @Put('/:id')
-  update(@Param('id') id: string, @Body()class1: ClassReq){
-    return this.classService.update(id, class1)
+  update(@Param('id') id: string, @Body()cls: ClassReq){
+    return this.classService.update(id, cls)
   }
 
   @Delete('/:id')
