@@ -31,7 +31,7 @@ export default function QuizPage() {
 
   return (
 
-    <Container maxWidth="md">
+    <Container maxWidth="md" >
       <Box
         position="sticky"
         top={0}
@@ -40,11 +40,34 @@ export default function QuizPage() {
         borderBottom="1px solid #ccc"
         py={1}
         mb={2}
+        sx={{ position: "sticky" }}
       >
-        <Typography variant="h6" align="center" color="error">
-          ⏳ Time left: {formatted}
-        </Typography>
+        <Box sx={{ position: "relative", textAlign: "center" }}>
+          {/* Timer positioned in top-right */}
+          <Typography
+            variant="body1"
+            color="error"
+            sx={{
+              position: "absolute",
+              right: 16,
+              top: 0,
+              fontWeight: 600,
+            }}
+          >
+            ⏳ {formatted}
+          </Typography>
+
+          {/* Centered title */}
+          <Typography variant="h6" component="h1" fontWeight={600}>
+            Đề tiếng Anh thi tốt nghiệp THPT 2025
+          </Typography>
+          <Typography variant="body1">
+            Mã đề 1102 - Thời gian làm bài là 50 phút
+          </Typography>
+        </Box>
       </Box>
+
+
       {questionGroups.map(group => (
         <QuestionGroup
           key={group.id}
@@ -55,10 +78,11 @@ export default function QuizPage() {
       ))}
 
       <Button
+
         variant="contained"
         fullWidth
         disabled={!allAnswered}
-        sx={{ mt: 4 }}
+        sx={{ mt: 4, mb:4 }}
         onClick={() => navigate("/result", { state: { answers } })}
       >
         Submit

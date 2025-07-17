@@ -22,6 +22,7 @@ export default function Question({ question, selected, onSelect }:QuestionProps)
           <Typography variant="body1" sx={{ whiteSpace: "pre-line" }}>
             {question.id}. {question.question}
           </Typography>
+
         </FormLabel>
         <RadioGroup
           value={selected || ""}

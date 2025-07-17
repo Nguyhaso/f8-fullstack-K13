@@ -10,9 +10,17 @@ export default function QuestionGroup({ group, answers, onSelect }: QuestionGrou
   return (
     <Box my={4}>
       <Typography variant="h6" gutterBottom>{group.title}</Typography>
-      <Typography variant="body1" sx={{ mb: 2, whiteSpace: "pre-wrap" }}>
-        {group.context}
-      </Typography>
+      {/*<Typography variant="body1" sx={{ mb: 2, whiteSpace: "pre-wrap" }}>*/}
+      {/*  {group.context}*/}
+      {/*</Typography>*/}
+      <Typography
+        component="div"
+        variant="body2"
+        color="text.secondary"
+        sx={{ whiteSpace: "pre-line", mb: 2 }}
+        dangerouslySetInnerHTML={{ __html: group.context || "" }}
+      />
+
       {group.questions.map(q => (
         <Question
           key={q.id}

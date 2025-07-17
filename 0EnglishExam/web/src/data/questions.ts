@@ -2,17 +2,17 @@ export const questionGroups = [
   {
     id: 1,
     title: "Smart Farming",
-    context: `When several farmers merge plots into a single “project farm”, they use digital tools to make that teamwork far more effective. GPS mapping, drones, and in-field sensors build a live, shared picture of soil types, weather shifts, and plant growth. Because everyone works on the same data, the team can settle seeding dates, determine when to spray, and track machinery in real time. What once depended on guesswork is now driven by verifiable information.
+    context: `When several farmers merge plots into a single “project farm”, they use digital tools to make that teamwork far more effective. GPS mapping, drones, and in-field sensors build a live, shared picture of soil types, weather shifts, and plant growth. Because everyone works on the same data, the team can <b><u>“settle”</u></b>  seeding dates, determine when to spray, and track machinery in real time. What once depended on guesswork is now driven by verifiable information.
 
-With GPS technology, farmers can accurately map out their fields and create customised planting plans. Seeding machines change their rate on the fly, drones spray pests on targeted zones, and smart spreaders apply fertiliser only where data shows a need. Because inputs go exactly where they help, fields yield more while chemical runoff falls. Trials report considerable savings on seed, fuel, and sprays – benefits the partners split at the season’s end.
+With GPS technology, farmers can accurately map out <b><u>“their”</u></b> fields and create customised planting plans. Seeding machines change their rate on the fly, drones spray pests on targeted zones, and smart spreaders apply fertiliser only where data shows a need.<b><u> Because inputs go exactly where they help, fields yield more while chemical runoff falls.</u></b>  Trials report considerable savings on seed, fuel, and sprays – benefits the partners split at the season’s end.
 
-Water management is just as precise. Specialised equipment tracks moisture every hour, and forecast apps predict rain, wind, or heatwaves. Automated pumps deliver measured water amounts to thirsty zones and stop when a storm is coming, slashing waste and energy bills. The result is steadier yields in dry years, fewer nutrients washed away, and a smaller water footprint for the whole partnership. Smart irrigation also helps limit weed growth, reducing herbicide use.
+Water management is just as precise. Specialised equipment tracks moisture every hour, and forecast apps predict rain, wind, or heatwaves. Automated pumps deliver measured water amounts to thirsty zones and stop when a storm is coming, <b><u>“slashing”</u></b> waste and energy bills. The result is steadier yields in dry years, fewer nutrients washed away, and a smaller water footprint for the whole partnership. Smart irrigation also helps limit weed growth, reducing herbicide use.
 
 The journey from field to market is equally digital. Cloud platforms record harvest weights, storage temperatures, and shipment times the moment they change, while blockchain records freeze each entry so customers can rely on it. Analytic tools browse the records to indicate weak points in the procedure, forecast prices, and suggest better planting plans for the next season to project partners. This makes project farming both profitable and sustainable.`,
     questions: [
       {
         id: 1,
-        question: "The word 'settle' in paragraph 1 mostly means _______.",
+        question: `The word 'settle' in paragraph 1 mostly means  _______.`,
         options: [
           {label: "A", text: "exchange"},
           {label: "B", text: "announce"},
