@@ -266,7 +266,7 @@ Over the past twelve years, the Da Nang International Fireworks Festival has hel
     
     Why does this matter? Greenwashing and climate denial share a core objective: to postpone the deep emission cuts claimed by scientists as urgent this decade. <b><u>[IV]</u></b> Whereas denial disputes the crisis, greenwashing misleads the public into believing problems are solved, thereby eroding consumer advocacy of genuine environmental actions and stalling regulatory reforms. In effect, it acts as a soothing lullaby, guiding society ever closer to ecological breakdown while fostering a false sense of progress. <b><u>Exposing the facade – and insisting on verifiable, measurable carbon reductions – is essential if rhetoric is to give way to real action.</u></b>
     
-    (Adapted from https://www.greenpeace.org.uk)`,
+    (Adapted from https://www.greenpeace.org.uk) `,
     questions: [
       {
         id: 20,
