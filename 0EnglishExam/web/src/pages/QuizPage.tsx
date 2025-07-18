@@ -50,7 +50,7 @@ export default function QuizPage() {
             sx={{
               position: "absolute",
               right: 16,
-              top: 0,
+              top: 70,
               fontWeight: 600,
             }}
           >
