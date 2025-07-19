@@ -1,0 +1,18 @@
+{
+  "rankings": [
+    {
+      "id": 1,
+      "username": "Alice",
+      "score": 9,
+      "timeTaken": 1500,
+      "createdAt": "2025-07-17T09:30:00Z"
+    },
+    {
+      "id": "fcf9",
+      "username": "ahihi",
+      "score": 7,
+      "timeTaken": 175,
+      "createdAt": "2025-07-19T05:57:17.686Z"
+    }
+  ]
+}

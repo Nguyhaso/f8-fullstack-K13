@@ -13,13 +13,15 @@ export default function QuestionGroup({ group, answers, onSelect }: QuestionGrou
       {/*<Typography variant="body1" sx={{ mb: 2, whiteSpace: "pre-wrap" }}>*/}
       {/*  {group.context}*/}
       {/*</Typography>*/}
+      <Box p={2} bgcolor="#f9f9f9" borderRadius={2} mb={2}>
       <Typography
         component="div"
-        variant="body2"
+        variant="body1"
         color="text.secondary"
-        sx={{ whiteSpace: "pre-line", mb: 2 }}
+        sx={{ whiteSpace: "pre-line", mb: 2 , fontSize: { xs: "1rem", sm: "1.1rem" } }}
         dangerouslySetInnerHTML={{ __html: group.context || "" }}
       />
+      </Box>
 
       {group.questions.map(q => (
         <Question
