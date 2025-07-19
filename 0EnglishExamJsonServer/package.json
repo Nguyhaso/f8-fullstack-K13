@@ -1,7 +1,7 @@
 {
   "name": "quiz-json-server",
   "version": "1.0.0",
-  "description": "Leaderboard API for English quiz",
+  "description": "Leaderboard API for English THPT 2025",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
