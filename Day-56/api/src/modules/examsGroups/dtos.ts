@@ -1,0 +1,49 @@
+import { ApiProperty } from '@nestjs/swagger';
+import {
+  IsString,
+  IsNotEmpty,
+  IsNumber,
+  IsBoolean,
+  IsDate,
+} from 'class-validator';
+import { ExamGroupReqI } from '@/shares';
+
+export class ExamGroupReq implements ExamGroupReqI {
+  @ApiProperty({
+    example: 'test name',
+  })
+  @IsString()
+  @IsNotEmpty()
+  name: string;
+
+  @ApiProperty({
+    example: 1,
+  })
+  @IsNumber()
+  class_id: number;
+
+  @ApiProperty({
+    example: '2025-01-01',
+  })
+  @IsDate()
+  @IsNotEmpty()
+  start_time: Date;
+
+  @ApiProperty({
+    example: 300,
+  })
+  @IsNumber()
+  await_time: number;
+
+  @ApiProperty({
+    example: true,
+  })
+  @IsBoolean()
+  is_once: boolean;
+
+  @ApiProperty({
+    example: true,
+  })
+  @IsBoolean()
+  is_save_local: boolean;
+}
